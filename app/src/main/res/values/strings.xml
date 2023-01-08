@@ -4,6 +4,12 @@
     <string name="login_password_hint">Password</string>
     <string name="registerTitle">Register</string>
     <string name="loginTitle">Login</string>
+    <string name="welcomeTitle">Hello %1$s</string>
+    <string name="welcomeMessage">Welcome to your Shoe Store, we are glad that you have created an account with us, and are delighted to serve you and help you manage your shoe inventory.</string>
+    <string name="instructionsTitle">How To Use</string>
+    <string name="instructionsMessageTitle">There are a couple of actions you can perform with your <b>shoe store</b> at the moment:</string>
+    <string name="instructionsMessageBody"><b>View</b>: the home screen is a view showing the list of shoes you currently have in your store.\n<b>Add</b>: to the bottom right of the list screen, you see an <i>+ button</i> that takes you to form where you can add new shoes.\n<b>Edit</b>: on the home screen, you can click on any shoe in the list, to take you to a form where you can edit the shoe\'s information.</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

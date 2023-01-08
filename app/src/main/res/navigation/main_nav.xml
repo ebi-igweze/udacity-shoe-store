@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="com.udacity.shoestore.views.OnBoardingFragment"
-        android:label="OnBoardingFragment" >
+        android:label="Welcome" >
         <action
             android:id="@+id/action_onBoardingFragment_to_shoeListingFragment"
             app:destination="@id/shoeListingFragment"
