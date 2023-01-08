@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/onBoardingFragment">
 
 
     <fragment
@@ -12,6 +12,11 @@
         <action
             android:id="@+id/action_loginFragment_to_onBoardingFragment"
             app:destination="@id/onBoardingFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_shoeListingFragment"
+            app:destination="@id/shoeListingFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
     </fragment>
