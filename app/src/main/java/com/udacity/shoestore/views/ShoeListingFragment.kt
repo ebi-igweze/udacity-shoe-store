@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.core.widget.NestedScrollView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListingBinding
@@ -18,7 +17,7 @@ import com.udacity.shoestore.viewmodels.ShoeListingViewModel
 class ShoeListingFragment : Fragment(), NestedScrollView.OnScrollChangeListener {
 
     private lateinit var binding: FragmentShoeListingBinding
-    private val viewModel: ShoeListingViewModel by viewModels()
+    private val viewModel: ShoeListingViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

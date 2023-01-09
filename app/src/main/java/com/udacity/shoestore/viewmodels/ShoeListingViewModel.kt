@@ -12,6 +12,10 @@ class ShoeListingViewModel: ViewModel() {
         get() = _shoes
 
 
+    fun addNewShoe(shoe: Shoe) {
+        _shoes.add(shoe)
+    }
+
     companion object {
 
         private val defaultShoeList = listOf(

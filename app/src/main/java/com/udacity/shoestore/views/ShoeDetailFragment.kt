@@ -6,16 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
+import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.viewmodels.ShoeListingViewModel
 
 class ShoeDetailFragment : Fragment() {
 
-    lateinit var binding: FragmentShoeDetailBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var binding: FragmentShoeDetailBinding
+    private val viewModel: ShoeListingViewModel by activityViewModels()
+    private val navController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +27,27 @@ class ShoeDetailFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_detail, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.saveBtn.setOnClickListener { saveNewShoe() }
+        binding.cancelBtn.setOnClickListener { navController.navigateUp() }
+    }
+
+    private fun saveNewShoe() {
+        val size = binding.shoeSize.text.toString().toDoubleOrNull() ?: 0.0
+        val shoe = Shoe(
+            binding.name.text.toString(),
+            size,
+            binding.company.text.toString(),
+            binding.description.text.toString()
+        )
+        // add the shoe to list
+        viewModel.addNewShoe(shoe)
+        // navigate back
+        navController.navigateUp()
     }
 
 }

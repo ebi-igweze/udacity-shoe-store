@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/shoeDetailFragment"
         android:name="com.udacity.shoestore.views.ShoeDetailFragment"
-        android:label="ShoeDetailFragment" />
+        android:label="New Shoe" />
     <fragment
         android:id="@+id/shoeListingFragment"
         android:name="com.udacity.shoestore.views.ShoeListingFragment"
