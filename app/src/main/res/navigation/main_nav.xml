@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav"
-    app:startDestination="@id/onBoardingFragment">
+    app:startDestination="@id/shoeListingFragment">
 
 
     <fragment
@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/shoeListingFragment"
         android:name="com.udacity.shoestore.views.ShoeListingFragment"
-        android:label="ShoeListingFragment" >
+        android:label="Inventory" >
         <action
             android:id="@+id/action_shoeListingFragment_to_shoeDetailFragment"
             app:destination="@id/shoeDetailFragment" />
