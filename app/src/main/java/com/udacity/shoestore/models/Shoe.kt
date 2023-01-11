@@ -1,8 +1,6 @@
 package com.udacity.shoestore.models
 
 import android.os.Parcelable
-import android.widget.EditText
-import androidx.databinding.InverseMethod
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
