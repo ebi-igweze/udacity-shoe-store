@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.ShoeDetailFragment">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/container_padding"
-        tools:context=".views.LoginFragment">
+        android:padding="@dimen/container_padding">
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -23,6 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:text="@={shoe.name}"
                 android:hint="Shoe Name"
                 />
 
@@ -42,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:text="@={shoe.company}"
                 android:hint="Company"
                 />
 
@@ -61,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
+                android:text="@={shoe.description}"
                 android:lines="2"
                 android:maxLines="3"
                 android:hint="Shoe Description"
@@ -83,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:digits="1234567890."
                 android:inputType="number"
+                android:text="@={shoe.sizeAsString}"
                 android:hint="Shoe Size"
                 />
 

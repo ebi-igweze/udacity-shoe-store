@@ -32,22 +32,20 @@ class ShoeDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.shoe = Shoe(name = "", size = 0.0, company = "", description = "")
         binding.saveBtn.setOnClickListener { saveNewShoe() }
         binding.cancelBtn.setOnClickListener { navController.navigateUp() }
     }
 
     private fun saveNewShoe() {
-        val size = binding.shoeSize.text.toString().toDoubleOrNull() ?: 0.0
-        val shoe = Shoe(
-            binding.name.text.toString(),
-            size,
-            binding.company.text.toString(),
-            binding.description.text.toString()
-        )
-        // add the shoe to list
-        viewModel.addNewShoe(shoe)
-        // navigate back
-        navController.navigateUp()
+        binding.shoe?.let { shoe ->
+            // set the size as double value
+            shoe.size = shoe.sizeAsString.toDoubleOrNull() ?: 0.0
+            // add the shoe to list
+            viewModel.addNewShoe(shoe)
+            // navigate back
+            navController.navigateUp()
+        }
     }
 
 }
