@@ -36,7 +36,8 @@ class OnBoardingWelcomeFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val userName = "Ebi"
+        val userName = viewModel.userName.ifEmpty { "John Doe" }
+
         binding.welcomeTitle.text = getString(R.string.welcomeTitle, userName)
         // show the instructions page
         binding.nextButton.setOnClickListener { viewModel.showInstructions() }

@@ -10,10 +10,17 @@ class OnBoardingViewModel: ViewModel() {
     val shouldShowInstructions: LiveData<Boolean>
         get() = _shouldShowInstructions
 
-
+    private var _userName: String = ""
+    val userName get() = _userName
 
     fun showInstructions() {
         _shouldShowInstructions.value = true
     }
+    fun hideInstructions() {
+        _shouldShowInstructions.value = false
+    }
 
+    fun setUserName(name: String) {
+        _userName = name
+    }
 }

@@ -40,4 +40,10 @@ class OnBoardingFragment : Fragment() {
             }
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // hide instructions screen when navigating away
+        viewModel.hideInstructions()
+    }
 }
