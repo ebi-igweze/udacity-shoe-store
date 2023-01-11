@@ -1,9 +1,8 @@
 package com.udacity.shoestore.views
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.MenuProvider
 import androidx.core.widget.NestedScrollView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -18,6 +17,7 @@ class ShoeListingFragment : Fragment(), NestedScrollView.OnScrollChangeListener 
 
     private lateinit var binding: FragmentShoeListingBinding
     private val viewModel: ShoeListingViewModel by activityViewModels()
+    private val navController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,9 +35,12 @@ class ShoeListingFragment : Fragment(), NestedScrollView.OnScrollChangeListener 
         binding.scrollView.setOnScrollChangeListener(this)
         // navigate to shoe details fragment
         binding.fab.setOnClickListener {
-            findNavController().navigate(R.id.action_shoeListingFragment_to_shoeDetailFragment)
+            navController.navigate(R.id.action_shoeListingFragment_to_shoeDetailFragment)
         }
 
+        // add menu options
+        addMenuOptions()
+        // add shoe items to view
         addShoesItemViews()
     }
 
@@ -53,6 +56,25 @@ class ShoeListingFragment : Fragment(), NestedScrollView.OnScrollChangeListener 
             binding.shoeListingContainer.addView(shoeListItem.root)
         }
     }
+
+    private fun addMenuOptions() {
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.main_menu, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                if (menuItem.itemId == R.id.logout) {
+                    navController.navigate(R.id.action_shoeListingFragment_to_loginFragment)
+                    return true
+                } else {
+                   return false
+                }
+            }
+
+        }, viewLifecycleOwner)
+    }
+
 
     override fun onScrollChange(
         v: NestedScrollView,
