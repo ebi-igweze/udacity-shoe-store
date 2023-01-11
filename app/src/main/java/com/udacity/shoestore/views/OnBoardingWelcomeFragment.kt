@@ -11,8 +11,6 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentOnBoardingWelcomeBinding
 import com.udacity.shoestore.viewmodels.OnBoardingViewModel
 
-private const val USER_NAME = "user_name"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [OnBoardingWelcomeFragment.newInstance] factory method to

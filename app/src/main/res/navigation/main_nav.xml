@@ -12,11 +12,19 @@
         <action
             android:id="@+id/action_loginFragment_to_onBoardingFragment"
             app:destination="@id/onBoardingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment_to_shoeListingFragment"
             app:destination="@id/shoeListingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -27,6 +35,10 @@
         <action
             android:id="@+id/action_onBoardingFragment_to_shoeListingFragment"
             app:destination="@id/shoeListingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/onBoardingFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -40,10 +52,16 @@
         android:label="Inventory" >
         <action
             android:id="@+id/action_shoeListingFragment_to_shoeDetailFragment"
-            app:destination="@id/shoeDetailFragment" />
+            app:destination="@id/shoeDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_shoeListingFragment_to_loginFragment"
             app:destination="@id/loginFragment"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/shoeListingFragment"
             app:popUpToInclusive="true" />
     </fragment>
